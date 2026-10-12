@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#0e1420"/>
+  <title>BARATÃO TCG — ROAD TO LAIC</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-icon">B<span>✦</span></div><div><strong>BARATÃO <em>TCG</em></strong><small>ROAD TO LAIC '26</small></div></div>
+      <p class="nav-title">ANÁLISE COMPETITIVA</p>
+      <nav id="nav">
+        <button class="nav-link active" data-tab="dashboard"><span>◫</span> Dashboard</button>
+        <button class="nav-link" data-tab="ranking"><span>▥</span> Ranking Top 15</button>
+        <button class="nav-link" data-tab="tournaments"><span>♜</span> Torneios</button>
+        <button class="nav-link" data-tab="matchups"><span>⚔</span> Matchups</button>
+        <button class="nav-link" data-tab="training"><span>◎</span> Treinamento</button>
+        <button class="nav-link" data-tab="data"><span>⇩</span> Dados & backups</button>
+      </nav>
+      <div class="side-bottom"><div class="pulse"></div><span>Base local no navegador</span><small>Faça backups em JSON regularmente.</small></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="mobile-brand">BARATÃO TCG <span>/ ROAD TO LAIC</span></div><div class="top-note">INTELIGÊNCIA COMPETITIVA <span class="edition">TEMPORADA 2026</span></div></header>
+      <div class="content" id="content"></div>
+      <footer>BARATÃO TCG · ROAD TO LAIC 2026 <span>Dados editáveis · Estimativas identificadas · Sem resultados inventados</span></footer>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <input type="file" id="file-input" accept=".json,application/json" hidden/>
+  <script src="seed.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
