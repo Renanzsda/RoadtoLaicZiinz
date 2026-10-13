@@ -64,3 +64,30 @@ test('atualização oficial posterior substitui contagens sem apagar treinos', (
   assert.deepEqual(next.training, db.training);
   assert.throws(() => mergeSource(next, original), /Resultado verificado/);
 });
+
+test('Recife pode ser reimportado sem duplicar matchups e backup JSON restaura a base', () => {
+  const report = require('../imports/latest.json');
+  const id = '0075';
+  const recife = { schemaVersion: 2,
+    tournaments: report.source.tournaments.filter(t => t.id === id),
+    results: report.source.results.filter(r => r.tournamentId === id),
+    matchups: report.source.matchups.filter(m => m.tournamentId === id) };
+  const empty = { version: 2, tournaments: [], results: [], matchups: [], training: [{ id: 'treino', player: 'Integrante' }] };
+  const first = mergeSource(empty, recife);
+  const second = mergeSource(first, recife);
+  assert.equal(second.tournaments.length, 1);
+  assert.equal(second.results.length, 63);
+  assert.equal(second.matchups.length, 635);
+  const restored = require('../data-core.js').validateBackup(JSON.parse(JSON.stringify(second)));
+  assert.deepEqual(restored, second);
+  assert.equal(restored.training[0].id, 'treino');
+});
+
+test('atualização rejeita perda silenciosa de um par oficial', () => {
+  const original = source();
+  original.matchups[0].sourceUrl = 'https://labs.limitlesstcg.com/T-TEST/decks/a/matchups';
+  const db = mergeSource({ version: 2, tournaments: [], results: [], matchups: [], training: [] }, original);
+  const missing = structuredClone(original);
+  missing.matchups = [];
+  assert.throws(() => mergeSource(db, missing), /deixou resultados oficiais anteriores de fora/);
+});

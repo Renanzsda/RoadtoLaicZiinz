@@ -174,7 +174,7 @@ function tournamentInfo(html, id, retrievedAt) {
     retrievedAt, status: 'verificado' };
 }
 
-async function run({ ids = IDS, delayMs = 400, decklistMode = 'topcut', outputDir = path.resolve(__dirname, '..', 'imports'), writeStatic = false, fetchPage = null } = {}) {
+async function run({ ids = IDS, delayMs = 400, decklistMode = 'topcut', outputDir = path.resolve(__dirname, '..', 'imports'), writeStatic = false, writeReport = true, exitCodeOnFailure = true, fetchPage = null } = {}) {
   const failures = [], source = { schemaVersion: 2, tournaments: [], results: [], matchups: [] };
   const players = [], decklists = [], coverage = [];
   let lastRequest = 0;
@@ -261,21 +261,21 @@ async function run({ ids = IDS, delayMs = 400, decklistMode = 'topcut', outputDi
   }
   validateSource(source);
   const output = { importedAt: iso(), sourceBase: BASE, decklistMode, source, players, decklists, coverage, failures };
-  fs.mkdirSync(outputDir, { recursive: true });
+  if (writeReport || writeStatic) fs.mkdirSync(outputDir, { recursive: true });
   const stamp = output.importedAt.replace(/[:.]/g, '-');
   const file = path.join(outputDir, `limitless-${stamp}.json`);
-  fs.writeFileSync(file, JSON.stringify(output, null, 2) + '\n');
+  if (writeReport || writeStatic) fs.writeFileSync(file, JSON.stringify(output, null, 2) + '\n');
   const sourceFile = path.join(outputDir, `limitless-${stamp}-source.json`);
-  fs.writeFileSync(sourceFile, JSON.stringify(source, null, 2) + '\n');
+  if (writeReport || writeStatic) fs.writeFileSync(sourceFile, JSON.stringify(source, null, 2) + '\n');
   if (writeStatic) {
     if (ids.length !== IDS.length || source.tournaments.length !== IDS.length || failures.length) throw Error('Base estática não atualizada: importação incompleta ou com falhas. O arquivo de diagnóstico foi preservado.');
     fs.writeFileSync(path.resolve(__dirname, '..', 'regionals-data.js'), `// Dados públicos do Limitless Labs coletados em ${output.importedAt}.\n// Gerado por scripts/import-limitless.js; detalhes e lacunas em ${path.basename(file)}.\nconst VERIFIED_REGIONALS = ${JSON.stringify(source, null, 2)};\n`);
     fs.copyFileSync(file, path.join(outputDir, 'latest.json'));
     fs.copyFileSync(sourceFile, path.join(outputDir, 'latest-source.json'));
   }
-  console.log(`Arquivo: ${file}`);
+  if (writeReport || writeStatic) console.log(`Arquivo: ${file}`);
   console.log(`Eventos: ${source.tournaments.length}/${ids.length}; resultados: ${source.results.length}; matchups: ${source.matchups.length}; jogadores: ${players.length}; listas: ${decklists.length}; falhas: ${failures.length}`);
-  if (source.tournaments.length !== ids.length || failures.length) process.exitCode = 2;
+  if (exitCodeOnFailure && (source.tournaments.length !== ids.length || failures.length)) process.exitCode = 2;
   return output;
 }
 

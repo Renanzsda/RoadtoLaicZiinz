@@ -61,6 +61,15 @@
     const incoming = validateSource(document);
     const next = validateBackup(database);
     const known = new Map(next.tournaments.map(t => [t.id, t]));
+    // A newer snapshot must not silently retain vanished official rows. Stop and
+    // require a manual review instead of presenting stale pairs as current data.
+    const official = row => row.status === 'verificado' && typeof row.sourceUrl === 'string' && row.sourceUrl.startsWith('https://labs.limitlesstcg.com/');
+    const incomingIds = new Set(incoming.tournaments.map(t => t.id));
+    const resultKeys = new Set(incoming.results.map(r => `${r.tournamentId}\u0000${r.deck}`));
+    const matchupKey = m => [m.tournamentId, ...[m.deck, m.opponent].sort(), m.unit].join('\u0000');
+    const matchupKeys = new Set(incoming.matchups.map(matchupKey));
+    if (next.results.some(r => incomingIds.has(r.tournamentId) && official(r) && !resultKeys.has(`${r.tournamentId}\u0000${r.deck}`)) ||
+      next.matchups.some(m => incomingIds.has(m.tournamentId) && official(m) && !matchupKeys.has(matchupKey(m)))) fail('Atualização deixou resultados oficiais anteriores de fora; revise a fonte antes de substituir o torneio');
     const officialRefresh = (old, row) =>
       old?.status === 'verificado' &&
       typeof old.sourceUrl === 'string' && old.sourceUrl.startsWith('https://labs.limitlesstcg.com/') &&

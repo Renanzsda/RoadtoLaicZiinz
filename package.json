@@ -5,6 +5,7 @@
   "scripts": {
     "import:labs": "node scripts/import-limitless.js",
     "publish:labs": "node scripts/publish-import.js",
+    "serve:local": "node scripts/local-server.js",
     "sprites:download": "node scripts/download-sprites.js",
     "test": "node --test tests/*.test.js"
   },
