@@ -46,3 +46,21 @@ test('rejeita taxa publicada sem definição e Dia 2 maior que participantes', (
   doc.results[0].day2 = 3;
   assert.throws(() => validateSource(doc), /Resultado/);
 });
+
+test('atualização oficial posterior substitui contagens sem apagar treinos', () => {
+  const original = source();
+  original.results[0].status = 'verificado';
+  original.results[0].sourceUrl = 'https://labs.limitlesstcg.com/T-TEST/decks';
+  original.matchups[0].sourceUrl = 'https://labs.limitlesstcg.com/T-TEST/decks/a/matchups';
+  const db = mergeSource({ version: 2, tournaments: [], results: [], matchups: [], training: [{ id: 'x', player: 'Pessoa' }] }, original);
+  const updated = structuredClone(original);
+  updated.results[0].players = 3;
+  updated.matchups[0].wins = 3;
+  updated.results[0].retrievedAt = '2026-10-13T00:00:00Z';
+  updated.matchups[0].retrievedAt = '2026-10-13T00:00:00Z';
+  const next = mergeSource(db, updated);
+  assert.equal(next.results[0].players, 3);
+  assert.equal(next.matchups[0].wins, 3);
+  assert.deepEqual(next.training, db.training);
+  assert.throws(() => mergeSource(next, original), /Resultado verificado/);
+});

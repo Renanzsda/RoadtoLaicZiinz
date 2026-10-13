@@ -44,7 +44,7 @@
     for (const r of document.results) {
       if (!object(r)) fail('Resultado da fonte inválido');
       const key = `${r.tournamentId}\u0000${r.deck}`;
-      if (!ids.has(r.tournamentId) || !string(r.deck) || resultKeys.has(key) || !count(r.players) || !count(r.day2) || (r.players !== null && r.day2 !== null && r.day2 > r.players) || !count(r.wins) || !count(r.losses) || !count(r.draws) || !units.has(r.unit) || !url(r.sourceUrl) || !/^\d{4}-\d{2}-\d{2}T/.test(r.retrievedAt) || !states.has(r.status) || (r.winRateReported != null && (!Number.isFinite(r.winRateReported) || r.winRateReported < 0 || r.winRateReported > 100 || !string(r.metricDefinition))) || ([r.wins, r.losses, r.draws].filter(x => x !== null).length % 3 !== 0)) fail('Resultado da fonte inválido ou duplicado');
+      if (!ids.has(r.tournamentId) || !string(r.deck) || resultKeys.has(key) || !count(r.players) || !count(r.day2) || (r.topCut !== undefined && !count(r.topCut)) || (r.players !== null && r.day2 !== null && r.day2 > r.players) || (r.players !== null && r.topCut != null && r.topCut > r.players) || !count(r.wins) || !count(r.losses) || !count(r.draws) || !units.has(r.unit) || !url(r.sourceUrl) || !/^\d{4}-\d{2}-\d{2}T/.test(r.retrievedAt) || !states.has(r.status) || (r.winRateReported != null && (!Number.isFinite(r.winRateReported) || r.winRateReported < 0 || r.winRateReported > 100 || !string(r.metricDefinition))) || ([r.wins, r.losses, r.draws].filter(x => x !== null).length % 3 !== 0)) fail('Resultado da fonte inválido ou duplicado');
       resultKeys.add(key);
     }
     const matchupKeys = new Set();
@@ -61,6 +61,13 @@
     const incoming = validateSource(document);
     const next = validateBackup(database);
     const known = new Map(next.tournaments.map(t => [t.id, t]));
+    const officialRefresh = (old, row) =>
+      old?.status === 'verificado' &&
+      typeof old.sourceUrl === 'string' && old.sourceUrl.startsWith('https://labs.limitlesstcg.com/') &&
+      typeof row.sourceUrl === 'string' && row.sourceUrl.startsWith('https://labs.limitlesstcg.com/') &&
+      old.tournamentId === row.tournamentId && old.sourceUrl.includes(`/${row.tournamentId}/`) && row.sourceUrl.includes(`/${row.tournamentId}/`) &&
+      typeof old.retrievedAt === 'string' && typeof row.retrievedAt === 'string' &&
+      Date.parse(row.retrievedAt) > Date.parse(old.retrievedAt);
     for (const t of incoming.tournaments) {
       const old = known.get(t.id);
       if (old && old.name !== t.name && old.status !== 'incompleto') fail(`ID de torneio em conflito: ${t.id}`);
@@ -69,13 +76,17 @@
     }
     for (const r of incoming.results) {
       const index = next.results.findIndex(x => x.tournamentId === r.tournamentId && x.deck === r.deck);
-      if (index >= 0 && next.results[index].status === 'verificado' && JSON.stringify(next.results[index]) !== JSON.stringify(r)) fail(`Resultado verificado já existente: ${r.deck}`);
+      if (index >= 0 && next.results[index].status === 'verificado' && JSON.stringify(next.results[index]) !== JSON.stringify(r) && !officialRefresh(next.results[index], r)) fail(`Resultado verificado já existente: ${r.deck}`);
       if (index >= 0) next.results[index] = r;
       else next.results.push(r);
     }
     for (const m of incoming.matchups) {
       const existing = next.matchups.find(x => x.tournamentId === m.tournamentId && x.unit === m.unit && ((x.deck === m.deck && x.opponent === m.opponent) || (x.deck === m.opponent && x.opponent === m.deck)));
-      if (existing && JSON.stringify(existing) !== JSON.stringify(m)) fail(`Matchup já existente: ${m.deck} / ${m.opponent}`);
+      if (existing && JSON.stringify(existing) !== JSON.stringify(m)) {
+        if (!officialRefresh(existing, m)) fail(`Matchup já existente: ${m.deck} / ${m.opponent}`);
+        next.matchups[next.matchups.indexOf(existing)] = m;
+        continue;
+      }
       if (existing) continue;
       next.matchups.push(m);
     }

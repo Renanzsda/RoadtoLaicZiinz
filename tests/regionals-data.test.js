@@ -11,11 +11,12 @@ const source = validateSource(context.source);
 test('as cinco fontes MD3 têm proveniência e cobertura explícitas', () => {
   assert.deepEqual(source.tournaments.map(t => t.id), ['0072', '0073', '0074', '0075', '0076']);
   assert.equal(source.results.length, 384);
-  assert.equal(source.matchups.length, 522);
+  assert.equal(source.matchups.length, 4614);
   for (const tournament of source.tournaments) {
     assert.equal(tournament.format, 'BO3');
     const covered = source.results.filter(r => r.tournamentId === tournament.id).reduce((n, r) => n + r.players, 0);
     assert.ok(covered <= tournament.players);
+    assert.ok(source.results.filter(r => r.tournamentId === tournament.id).every(r => Number.isInteger(r.topCut) && r.topCut <= r.players));
   }
 });
 

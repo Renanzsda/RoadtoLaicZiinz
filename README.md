@@ -216,10 +216,37 @@ O arquivo de fonte é JSON com `schemaVersion: 2` e três listas: `tournaments`,
 
 Cada matchup exige `tournamentId`, `deck`, `opponent`, `wins`, `losses`, `draws` (inteiros não negativos, com ao menos uma partida), `unit`, `sourceUrl`, `retrievedAt` e `status`. Importe um confronto apenas em uma perspectiva: as perspectivas inversas do mesmo par, torneio e unidade são rejeitadas. Preserve a variante do arquétipo como aparece na fonte. Os filtros da interface separam MD1/MD3; confrontos em jogos, séries e registros antigos sem unidade identificada também ficam separados.
 
-A aplicação **não extrai dados automaticamente do Limitless durante o uso**. O arquivo `regionals-data.js` reúne 384 linhas de resultados e 522 confrontos dos cinco Regionais. As linhas vieram das páginas `decks`, `decks?conversion` e `decks/<arquétipo>/matchups`; cada par de confronto foi conferido também na perspectiva inversa. Três pares por evento não tinham confrontos publicados entre os 15 arquétipos candidatos e foram deixados ausentes. A cobertura de arquétipos nas páginas `decks` foi de 3119/3122 (0072), 816/817 (0073), 2793/2793 (0074), 1072/1074 (0075) e 2918/2927 (0076) participantes. Esses limites não são preenchidos por estimativa.
+A aplicação **não extrai dados automaticamente do Limitless durante o uso**. A coleta sob demanda de 2026-10-13 atualizou `regionals-data.js` com 384 linhas de resultados e 4.614 pares de confronto dos cinco Regionais, incluindo todas as variantes identificadas nas páginas públicas. Cada par foi conferido na perspectiva inversa; confrontos sem partidas publicadas permanecem ausentes. A classificação completa tem 10.733 jogadores e identifica deck para 10.718 deles. A cobertura por evento é 3119/3122 (0072), 816/817 (0073), 2793/2793 (0074), 1072/1074 (0075) e 2918/2927 (0076). As 51 decklists de Top Cut coletadas e os registros individuais ficam em `imports/latest.json`. Esses limites não são preenchidos por estimativa.
 
 O `Win %` publicado corresponde, em todas as linhas coletadas, a `100 × (W + T/3) / (W + L + T)`, com arredondamento a duas casas. É a taxa por pontos de séries MD3 (3/1/0). A taxa com empate valendo metade e a taxa de vitórias puras são métricas distintas. A página de ranking separa desempenho observado (mínimo de 100 séries para ordenar) e prioridade inicial de treino (presença observada); a prioridade final depende dos decks que os integrantes jogarão e dos confrontos específicos. O índice experimental da V1 permanece visível para comparação, sem ser tratado como previsão.
 
 Em um navegador sem dados locais, a V2 carrega o conjunto auditado. Backups antigos são preservados na chave V1 e não recebem atualização automática por cima de dados pessoais; use **Aplicar 5 Regionais auditados** na aba Dados & backups para incorporá-los à base local depois de exportar um backup. A importação de fonte aceita apenas os cinco Regionais MD3. Yokohama e City Leagues continuam fora do ranking atual.
 
 Validação local: `node --test tests/*.test.js` e `node --check app.js`. Para abrir a interface, use `index.html` diretamente ou um servidor estático como `python3 -m http.server 8000` no diretório do projeto.
+
+## 11. Importador reproduzível do Limitless Labs
+
+O importador é executado **sob demanda**, quando você fornecer novas fontes ou solicitar uma atualização. Não há coleta automática nem agendamento. Ele usa **Node.js apenas na coleta**; a aplicação permanece HTML/CSS/JavaScript puro. Ele acessa as páginas públicas `standings`, `decks`, `decks?conversion`, `decks/<variante>/matchups` e, quando solicitado, `player/<id>/decklist` dos cinco Regionais Masters. Lê os dados embutidos no HTML renderizado; não chama os endpoints internos do Labs. Requer Node.js 20+, `curl` e acesso a `labs.limitlesstcg.com`. O `curl` é usado como transporte para respeitar o proxy do ambiente em nuvem. A execução é sequencial, com intervalo mínimo de 300 ms entre requisições, timeout e tentativas limitadas. Consulte também as regras de acesso do site antes de aumentar a frequência.
+
+```bash
+npm ci
+npm test
+npm run import:labs -- --decklists=topcut --delay-ms=400
+```
+
+A execução grava em `imports/limitless-DATA.json` o relatório completo: `source` (torneios, resultados e matchups), `players` (classificação individual, posição, deck, W/L/D, Dia 2, Top Cut e URL da lista), `decklists` (cartas efetivamente coletadas), `coverage` e `failures`. Grava também `imports/limitless-DATA-source.json`, que pode ser selecionado em **Dados & backups → Importar fonte auditada** no navegador. A opção padrão baixa decklists de Top Cut; `--decklists=all` tenta todas as listas publicadas e pode levar muito tempo. `--decklists=none` guarda apenas as URLs das listas. As contagens ausentes continuam ausentes; o arquivo registra o que falhou. Se algum evento ou página necessária falhar, o processo termina com código 2 e **não deve atualizar a base incorporada**.
+
+Depois de conferir `failures: []`, a cobertura e as contagens dos cinco torneios, incorpore a coleta ao site com:
+
+```bash
+npm run publish:labs -- imports/limitless-DATA.json
+npm test
+```
+
+O comando de publicação só aceita os cinco torneios sem falhas. Ele atualiza `regionals-data.js`, `imports/latest.json` (inclui jogadores e listas) e `imports/latest-source.json` (arquivo importável no navegador). A versão publicada fica disponível para download em **Dados & backups**. Arquivos datados ficam locais por padrão para evitar duplicação no Git. `npm run import:labs -- --write-static` faz a publicação da base estática na mesma execução, mas só após a validação completa.
+
+**Definições:** `winRateReported` reproduz o `Win %` mostrado no Labs; W/L/D e a taxa calculada são guardados separadamente. Presença é `players` do arquétipo dividido pelo total oficial do evento. Dia 2 e Top Cut são contagens de jogadores diferentes; Top Cut vem da classificação individual, e a conversão é calculada somente com os denominadores disponíveis. Cada confronto é salvo uma vez por par não ordenado, torneio e unidade, depois de conferir a perspectiva inversa. Não somamos a linha de um deck com a linha inversa. Variante (`variantId`) e família (`family`) permanecem campos distintos, sem agrupar resultados automaticamente. Jogadores sem deck identificado não são atribuídos a nenhum arquétipo.
+
+Os cinco eventos têm `format: "BO3"` e os W/L/D publicados são **rodadas/séries MD3**, salvas como `unit: "match"`. Empates são preservados. O importador não converte vitórias de rodada em vitórias de jogos individuais e não cria dados MD1 para esses Regionais. Em cada página de matchup, a soma de confrontos identificados, confrontos procedurais e adversários desconhecidos precisa bater com W/L/D agregado do arquétipo; apenas os confrontos entre variantes identificadas entram na matriz. A distinção MD1/MD3 será relevante nas futuras fontes japonesas, sem misturar as estatísticas atuais.
+
+**Limites:** a classificação e os resultados individuais podem incluir jogadores sem deck identificado; `coverage` informa quantos ficaram de fora da análise por arquétipo. A coleta padrão inclui somente listas de Top Cut; URLs das demais listas disponíveis ficam em `players`. Partidas individuais não são sintetizadas a partir de W/L/D agregados. Uma página com resposta 200, mas estrutura inesperada ou dados divergentes, é tratada como falha de coleta.

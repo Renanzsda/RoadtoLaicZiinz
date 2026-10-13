@@ -29,6 +29,8 @@ jobs:
           cp index.html styles.css seed.js data-core.js regionals-data.js app.js _site/
           mkdir -p _site/assets
           cp assets/baratildo-logo.png _site/assets/
+          mkdir -p _site/imports
+          cp imports/latest.json imports/latest-source.json _site/imports/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
