@@ -250,3 +250,14 @@ O comando de publicação só aceita os cinco torneios sem falhas. Ele atualiza 
 Os cinco eventos têm `format: "BO3"` e os W/L/D publicados são **rodadas/séries MD3**, salvas como `unit: "match"`. Empates são preservados. O importador não converte vitórias de rodada em vitórias de jogos individuais e não cria dados MD1 para esses Regionais. Em cada página de matchup, a soma de confrontos identificados, confrontos procedurais e adversários desconhecidos precisa bater com W/L/D agregado do arquétipo; apenas os confrontos entre variantes identificadas entram na matriz. A distinção MD1/MD3 será relevante nas futuras fontes japonesas, sem misturar as estatísticas atuais.
 
 **Limites:** a classificação e os resultados individuais podem incluir jogadores sem deck identificado; `coverage` informa quantos ficaram de fora da análise por arquétipo. A coleta padrão inclui somente listas de Top Cut; URLs das demais listas disponíveis ficam em `players`. Partidas individuais não são sintetizadas a partir de W/L/D agregados. Uma página com resposta 200, mas estrutura inesperada ou dados divergentes, é tratada como falha de coleta.
+
+## 12. Sprites por deck
+
+Os ícones do site usam arquivos PNG locais em `assets/sprites/`, para funcionar também offline. As imagens vieram do [repositório PokéAPI Sprites](https://github.com/PokeAPI/sprites); cada ícone abre a [página da espécie no Pokémon Database](https://pokemondb.net/sprites), conforme a referência visual escolhida para o projeto. O acesso direto a `pokemondb.net` estava bloqueado no ambiente de importação, por isso os PNGs foram baixados do PokéAPI, não copiados do Pokémon Database. `assets/sprites/manifest.json` registra URL e SHA-256 de cada arquivo. O importador usa revisões fixas dos repositórios PokéAPI para permitir a reprodução da coleta:
+
+```bash
+npm run sprites:download
+npm test
+```
+
+`deck-sprites.js` identifica espécies explícitas nos nomes dos decks; por exemplo, `Dragapult` mostra Dragapult e `Dragapult Blaziken` mostra Dragapult + Blaziken. As espécies de um mesmo deck permanecem lado a lado. Para nomes genéricos, usa os ícones representativos publicados nas páginas `decks` dos cinco Regionais: `Basic Box` → Ogerpon + Clefairy, `Festival Lead` → Dipplin + Thwackey e `Tera Box` → Noctowl + Ogerpon. Esses ícones identificam a categoria visual do Limitless, não comprovam a lista exata de cada jogador. `Other` continua sem sprite por não identificar uma espécie. Para nomes de formas especiais (como `Mega`, `Alolan` e `Paldean`), o PNG representa a espécie base do PokéAPI; ele não afirma identificar a forma ou carta exata usada no torneio. Sprites são apenas identificação visual e não alteram estatísticas, variantes ou resultados.

@@ -24,6 +24,10 @@ test('aplicação estática abre, mostra Top Cut e persiste a base importada', a
     await new Promise(resolve => dom.window.addEventListener('load', resolve, { once: true }));
     assert.deepEqual(errors, []);
     assert.match(dom.window.document.querySelector('#content').textContent, /Road to LAIC/);
+    const dragapultBlaziken = [...dom.window.document.querySelectorAll('.deck-identity')].find(node => node.textContent === 'Dragapult Blaziken');
+    assert.deepEqual([...dragapultBlaziken.querySelectorAll('.sprite-link')].map(node => node.href), [
+      'https://pokemondb.net/sprites/dragapult', 'https://pokemondb.net/sprites/blaziken'
+    ]);
     assert.ok(dom.window.localStorage.getItem('baratao-road-to-laic-v2'));
     dom.window.document.querySelector('[data-tab="tournaments"]').click();
     assert.match(dom.window.document.querySelector('#content').textContent, /Conv. Top Cut/);

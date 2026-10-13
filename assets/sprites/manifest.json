@@ -1,0 +1,623 @@
+{
+  "spriteRepository": "https://github.com/PokeAPI/sprites/tree/0dc105d5b12416932f29b594078282ab4be045f5",
+  "speciesRepository": "https://github.com/PokeAPI/pokeapi/tree/81d20919845b6a445969b9265aab5cec6b04cece",
+  "pokemonDbReference": "https://pokemondb.net/sprites",
+  "files": [
+    {
+      "slug": "abomasnow",
+      "name": "Abomasnow",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/abomasnow",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/460.png",
+      "sha256": "bd3eeeb640cb09f395e89b2529a7a172d0e7ff9508c7c811f931d2977321d389"
+    },
+    {
+      "slug": "absol",
+      "name": "Absol",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/absol",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/359.png",
+      "sha256": "e08e8fa7c90d52bbc79859342b1c88f353a80eff273a5ce7d3960a6e8374da38"
+    },
+    {
+      "slug": "alakazam",
+      "name": "Alakazam",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/alakazam",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/65.png",
+      "sha256": "752cdf98d00200922871829e25fab2c8ac7af0521c9613b149d61310dc713597"
+    },
+    {
+      "slug": "arboliva",
+      "name": "Arboliva",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/arboliva",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/930.png",
+      "sha256": "efdee4a17080f79bbbabd2bb3d55685b0dc214fb574af5c8ff7cdd95664eec07"
+    },
+    {
+      "slug": "archaludon",
+      "name": "Archaludon",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/archaludon",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1018.png",
+      "sha256": "35b71113439d2a4605164326996d0f08e26dc633beb99cbd97283ae4e007367d"
+    },
+    {
+      "slug": "azumarill",
+      "name": "Azumarill",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/azumarill",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/184.png",
+      "sha256": "d7d092901d81370ff6d9ec903c0c26145152dd03c2dc1c78ae5520b1918b1d0a"
+    },
+    {
+      "slug": "barbaracle",
+      "name": "Barbaracle",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/barbaracle",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/689.png",
+      "sha256": "49deab49b133fe7766cbfe050568774d15640358e26d29cff33a0c6f018736be"
+    },
+    {
+      "slug": "beedrill",
+      "name": "Beedrill",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/beedrill",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/15.png",
+      "sha256": "e664ed91c3789fe42de1373346f9796f167dfdf8ee39061a97287922f5394b78"
+    },
+    {
+      "slug": "bellibolt",
+      "name": "Bellibolt",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/bellibolt",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/939.png",
+      "sha256": "e759c3dcce273d9b426cd95131cae87a1f473da8f396d5ed4267c38232e5b4ec"
+    },
+    {
+      "slug": "blaziken",
+      "name": "Blaziken",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/blaziken",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/257.png",
+      "sha256": "3b310181ab42b7f7cb13ca6d168d4e82d8f25bf455dc69e3d0414f2138105c6e"
+    },
+    {
+      "slug": "blissey",
+      "name": "Blissey",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/blissey",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/242.png",
+      "sha256": "eebf2d67ebadab3d5e251fd41b500e3835829232af75ddde58dfd5fba79f8fbb"
+    },
+    {
+      "slug": "bouffalant",
+      "name": "Bouffalant",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/bouffalant",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/626.png",
+      "sha256": "5b005fb730fab7fd1f7b4e91d6ba9d56f405419f763603cd8ee5b9ac6caacb5c"
+    },
+    {
+      "slug": "bronzong",
+      "name": "Bronzong",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/bronzong",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/437.png",
+      "sha256": "40acb8b718bc22185c40b2d0246b27926a8982d8b47e918380c6d26343fcc58c"
+    },
+    {
+      "slug": "camerupt",
+      "name": "Camerupt",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/camerupt",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/323.png",
+      "sha256": "ff0826e011a95f5cc2bb7358e96d19cf3cb39bfb12b3577e6c4edd984107de00"
+    },
+    {
+      "slug": "ceruledge",
+      "name": "Ceruledge",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/ceruledge",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/937.png",
+      "sha256": "689f629fd364a66432d474234b3ac6e170817a2587816f0b6c853d65038615df"
+    },
+    {
+      "slug": "chandelure",
+      "name": "Chandelure",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/chandelure",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/609.png",
+      "sha256": "32ad9ca97bae7d50d45b8f420187391a0237e79a9c199285026f734f8af28a7c"
+    },
+    {
+      "slug": "charizard",
+      "name": "Charizard",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/charizard",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/6.png",
+      "sha256": "53358b7e8be91014bd18285862bd56c0549b5d23af175deb59f0e6f6339c878f"
+    },
+    {
+      "slug": "cinccino",
+      "name": "Cinccino",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/cinccino",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/573.png",
+      "sha256": "1d97da9ead49fa2b29f57f0d6dcf51d15a1bf9f42abd8abf8a2fc24c1be20c0f"
+    },
+    {
+      "slug": "clefairy",
+      "name": "Clefairy",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/clefairy",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/35.png",
+      "sha256": "ac0619bb1469083b1e122753c5b7d23e07a7191eba999b32e9667f4a166e0d38"
+    },
+    {
+      "slug": "conkeldurr",
+      "name": "Conkeldurr",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/conkeldurr",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/534.png",
+      "sha256": "e1b6607ae1af6ac4b76978197cce0824e80474f57b76267a9cd6aa8f2039dc3f"
+    },
+    {
+      "slug": "crustle",
+      "name": "Crustle",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/crustle",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/558.png",
+      "sha256": "b7f4074e5dc0e9400624dcf968c5ad41c21a014a785dab44428dc27d441fcddf"
+    },
+    {
+      "slug": "darkrai",
+      "name": "Darkrai",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/darkrai",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/491.png",
+      "sha256": "2357dda903b0513639cb34e46a676b5dbef298e8d4ffdceb8587434c2ed3390a"
+    },
+    {
+      "slug": "decidueye",
+      "name": "Decidueye",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/decidueye",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/724.png",
+      "sha256": "db9427e4100de0d073fcf3cdc3a53907bb138eb1a96d26d650232472c4df8cb0"
+    },
+    {
+      "slug": "dhelmise",
+      "name": "Dhelmise",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/dhelmise",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/781.png",
+      "sha256": "b63fcf4e5c4189bfe4623b7681d410a2c3e07f863b7fcbc567f775883035ba7e"
+    },
+    {
+      "slug": "diancie",
+      "name": "Diancie",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/diancie",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/719.png",
+      "sha256": "c7a9936a1ebc3ff3fea4b6e523bd39f7093bfee3ab3aab259e2bc41853e81a3d"
+    },
+    {
+      "slug": "dipplin",
+      "name": "Dipplin",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/dipplin",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1011.png",
+      "sha256": "cd8f8741be1479fc04a8f885a53e3f7661377784983ad8573fd02dd9183f5947"
+    },
+    {
+      "slug": "doublade",
+      "name": "Doublade",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/doublade",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/680.png",
+      "sha256": "63bb8f71417748a6e2ce8137713ef314b9ffdfcb696a905e305a8b2c155a67a3"
+    },
+    {
+      "slug": "dragapult",
+      "name": "Dragapult",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/dragapult",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/887.png",
+      "sha256": "4c531f288e538d8914f366d1b49a9fab0ee9a9d33b953742ea662f9a005e2c77"
+    },
+    {
+      "slug": "dragonite",
+      "name": "Dragonite",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/dragonite",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/149.png",
+      "sha256": "09216753ae96a01d1444a7568548bbfcfb22fe5de7605151e1e01baac7cdda38"
+    },
+    {
+      "slug": "dudunsparce",
+      "name": "Dudunsparce",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/dudunsparce",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/982.png",
+      "sha256": "eeab6382669218a39cb28355cebbf17e7751d20d8a0aed268cd85c467efca2c4"
+    },
+    {
+      "slug": "dusknoir",
+      "name": "Dusknoir",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/dusknoir",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/477.png",
+      "sha256": "12977e53941197dc519a448b0d90ddb5761f91a8864637bee1639cf687b96961"
+    },
+    {
+      "slug": "eelektrik",
+      "name": "Eelektrik",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/eelektrik",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/603.png",
+      "sha256": "e6e5fdc2fe3b01eb3b0c977a8e3f052789bf91649cb32309ee2ae085e9a44960"
+    },
+    {
+      "slug": "excadrill",
+      "name": "Excadrill",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/excadrill",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/530.png",
+      "sha256": "33e75c9f0ccc5f11033476ee2868aa469b11c0956271a80012150bf338d41f31"
+    },
+    {
+      "slug": "exeggutor",
+      "name": "Exeggutor",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/exeggutor",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/103.png",
+      "sha256": "eb44243b21b2b787ea5c13ddb31ada3997d173a8b3da381d71f9cc3e2d6f8647"
+    },
+    {
+      "slug": "feraligatr",
+      "name": "Feraligatr",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/feraligatr",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/160.png",
+      "sha256": "2849e4e930dd4235afb97c9582f12c95b6cfa638b641d1ad9cccf528a8d805d7"
+    },
+    {
+      "slug": "flareon",
+      "name": "Flareon",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/flareon",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/136.png",
+      "sha256": "80d64fb2e7ad492e68d4a7a3e48ef430275246c6e48da4b3678eebfd903b8c44"
+    },
+    {
+      "slug": "froslass",
+      "name": "Froslass",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/froslass",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/478.png",
+      "sha256": "946065a3720384578c3975bece598be57c9310bb9b3ef58e3631841c836b8438"
+    },
+    {
+      "slug": "garchomp",
+      "name": "Garchomp",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/garchomp",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/445.png",
+      "sha256": "9d27f8854985481789606da367120fd62949f6637ee283e1d5c7d1e52213c476"
+    },
+    {
+      "slug": "gengar",
+      "name": "Gengar",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/gengar",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/94.png",
+      "sha256": "00ad4a589f9fc1a88f77dcd512477e2e124ec4030b01d8e786700fad14d38ead"
+    },
+    {
+      "slug": "greninja",
+      "name": "Greninja",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/greninja",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/658.png",
+      "sha256": "b6e0cacfbbc1fb75224397f2a42cd0e8153ac40d7b6849473c67e45cb14dd285"
+    },
+    {
+      "slug": "grimmsnarl",
+      "name": "Grimmsnarl",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/grimmsnarl",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/861.png",
+      "sha256": "f64ab1c3987ee121347fa6c199607c876a96383efe15567e208a3c4b4dfbfc28"
+    },
+    {
+      "slug": "gyarados",
+      "name": "Gyarados",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/gyarados",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/130.png",
+      "sha256": "113668f60e8a1211c852af22903ebbec2072a91bdb8ddd957056498bd2b8e6f2"
+    },
+    {
+      "slug": "hariyama",
+      "name": "Hariyama",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/hariyama",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/297.png",
+      "sha256": "5922d2694a8707a357d7d768161b7feb89a255c1e00378f88a9734391e634682"
+    },
+    {
+      "slug": "heatran",
+      "name": "Heatran",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/heatran",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/485.png",
+      "sha256": "7839de085584e8d883bf506ec99666f36baaec2f843cfb0164343e4d31cd2242"
+    },
+    {
+      "slug": "honchkrow",
+      "name": "Honchkrow",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/honchkrow",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/430.png",
+      "sha256": "267037acadd85c0dd44dddb50097cbfb60c9d121cf6052ec9178816d2d780b6f"
+    },
+    {
+      "slug": "hydrapple",
+      "name": "Hydrapple",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/hydrapple",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1019.png",
+      "sha256": "319330033b6eb182ed46fff9be3b66f688eef18b0da46112d4c6ffe9a339b78a"
+    },
+    {
+      "slug": "hydreigon",
+      "name": "Hydreigon",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/hydreigon",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/635.png",
+      "sha256": "2307eb6cfa64b5bc591719fb95e56fa5f0718c8868369c954894a2f1785d8fb5"
+    },
+    {
+      "slug": "iron-thorns",
+      "name": "Iron Thorns",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/iron-thorns",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/995.png",
+      "sha256": "917128f82d76a6a66aaef99a5f125881d26e5dc138a904054bd4820fb0973805"
+    },
+    {
+      "slug": "jellicent",
+      "name": "Jellicent",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/jellicent",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/593.png",
+      "sha256": "0cc9fc3304a46926f2cc99c53a845dbc2f39232913efe0d83ed4fadfc7de90dc"
+    },
+    {
+      "slug": "joltik",
+      "name": "Joltik",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/joltik",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/595.png",
+      "sha256": "20b9619204897ec9388a68105960408284975cdbbd1ce8d9723b26793c86b6f9"
+    },
+    {
+      "slug": "kangaskhan",
+      "name": "Kangaskhan",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/kangaskhan",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/115.png",
+      "sha256": "8b03d5f245457e8b06179c59aefa148d68ba88eec8245681a5320b4485e55fa3"
+    },
+    {
+      "slug": "lopunny",
+      "name": "Lopunny",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/lopunny",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/428.png",
+      "sha256": "5a5d5ba06f305ef439b2886bdd48125bf997bf420a4655372e3b903075bcf22c"
+    },
+    {
+      "slug": "lucario",
+      "name": "Lucario",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/lucario",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/448.png",
+      "sha256": "fff5dbfe77213ab49bde7b7062aee3d851a2ecb5ec727596d32d5bff04d6ddf2"
+    },
+    {
+      "slug": "lunatone",
+      "name": "Lunatone",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/lunatone",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/337.png",
+      "sha256": "d6112fc26939f88d7cd639c9275b44d7ab39a1f3fab5e44d293c0fd6f42e5d97"
+    },
+    {
+      "slug": "magcargo",
+      "name": "Magcargo",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/magcargo",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/219.png",
+      "sha256": "35db179bb94dd4fcba3d5a3140be2b033607189be36a75edc392ef16baeb64e5"
+    },
+    {
+      "slug": "manectric",
+      "name": "Manectric",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/manectric",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/310.png",
+      "sha256": "505989c11c3626ead06ec3b0060bb50a54a21f147ecc046b2e68c10404c7318b"
+    },
+    {
+      "slug": "meganium",
+      "name": "Meganium",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/meganium",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/154.png",
+      "sha256": "9e6d0d23167b212d7595c46554c7660a550540a84bc2d4b732a78f50e0d14ba7"
+    },
+    {
+      "slug": "metagross",
+      "name": "Metagross",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/metagross",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/376.png",
+      "sha256": "66e37aa57015e3589338974aefecb917d674cf210935ce834d9e2fc37591c845"
+    },
+    {
+      "slug": "metang",
+      "name": "Metang",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/metang",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/375.png",
+      "sha256": "281773514f3576433cc3a663c3a70266450d1bd63d500ccb5e1811acdd62cf2a"
+    },
+    {
+      "slug": "mew",
+      "name": "Mew",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/mew",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/151.png",
+      "sha256": "dfbeeafd632403044da8f1a981425612d3fde80fb0bfcf6cc25de7d150b025ba"
+    },
+    {
+      "slug": "mewtwo",
+      "name": "Mewtwo",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/mewtwo",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/150.png",
+      "sha256": "31c5aebb134a3711864a92091cb1b5c35158e4e90ca5c88afddf56f0cf4bc129"
+    },
+    {
+      "slug": "munkidori",
+      "name": "Munkidori",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/munkidori",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1015.png",
+      "sha256": "96f6858e15e38b41cb14f42e2e1a8846a1492ea06ed43225a22af117ad1422b7"
+    },
+    {
+      "slug": "noctowl",
+      "name": "Noctowl",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/noctowl",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/164.png",
+      "sha256": "ba5cb282888d1ee6a9c4cd971deef905c1a80478d9ce3eabaa0d8811134cf98c"
+    },
+    {
+      "slug": "ogerpon",
+      "name": "Ogerpon",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/ogerpon",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1017.png",
+      "sha256": "1a06ffb04203a425d843703c3e516c1b2877b7efd0438722a2009d5059b2b30d"
+    },
+    {
+      "slug": "okidogi",
+      "name": "Okidogi",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/okidogi",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1014.png",
+      "sha256": "7c9898c00dd1361be45ed33e3ccde3f5f0c0a54e7a1dc9f5927932aa5dd6cb59"
+    },
+    {
+      "slug": "palafin",
+      "name": "Palafin",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/palafin",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/964.png",
+      "sha256": "b5846472225f8509ca5b730615ea225cf091dd8b408dd040117cea28df000eaf"
+    },
+    {
+      "slug": "raging-bolt",
+      "name": "Raging Bolt",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/raging-bolt",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1021.png",
+      "sha256": "8567668265d5a121f5bd65ddf5533bf2d3a9289e51cfe0cc3fb81f2d07d4e0c7"
+    },
+    {
+      "slug": "seaking",
+      "name": "Seaking",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/seaking",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/119.png",
+      "sha256": "0085b9d70878c591608a5e4386cd9bdcefb75aaf143c3ff4b9f9993ec15a57ce"
+    },
+    {
+      "slug": "sharpedo",
+      "name": "Sharpedo",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/sharpedo",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/319.png",
+      "sha256": "dcad0a713e1c74e982d777bd4c2ba8ea035d1db88028da6a736172cee3950026"
+    },
+    {
+      "slug": "sinistcha",
+      "name": "Sinistcha",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/sinistcha",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/1013.png",
+      "sha256": "94af2072e08edbea06f5a2a684d61dfbc7b8642d9b2d1c04c09dacf926ce19bc"
+    },
+    {
+      "slug": "slaking",
+      "name": "Slaking",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/slaking",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/289.png",
+      "sha256": "eb2efc79fc51dd493e9b7b23b252b31a9946bb25bda873ce8291dd57e29dc414"
+    },
+    {
+      "slug": "slowking",
+      "name": "Slowking",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/slowking",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/199.png",
+      "sha256": "ffb59038b5a3e825fb05061e5d40ede1ccb6e6607d6a8c454622cde977165c65"
+    },
+    {
+      "slug": "spidops",
+      "name": "Spidops",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/spidops",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/918.png",
+      "sha256": "729597443efcc4f87d59d8fcec53f2e2df151a4757fa01117e32ca843dc36cd2"
+    },
+    {
+      "slug": "starmie",
+      "name": "Starmie",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/starmie",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/121.png",
+      "sha256": "78a7f2bb3cb19538d44ab6bf0d3d0ef4a685f50109ac8097f3c765e91907bffe"
+    },
+    {
+      "slug": "sylveon",
+      "name": "Sylveon",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/sylveon",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/700.png",
+      "sha256": "1ba3ba4d59fbe1e10ac86436cccf58931ec3d23646a496201738e2c6b9d76824"
+    },
+    {
+      "slug": "tauros",
+      "name": "Tauros",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/tauros",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/128.png",
+      "sha256": "2d8ec658707a370288456a65f46c779c15002ed7bae29f3123ef7003870c49a3"
+    },
+    {
+      "slug": "thwackey",
+      "name": "Thwackey",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/thwackey",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/811.png",
+      "sha256": "d37adf19fae3ebbb38289da2d34e5aac4dde966d4df62d4bd8c01518b6c3c9d5"
+    },
+    {
+      "slug": "toucannon",
+      "name": "Toucannon",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/toucannon",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/733.png",
+      "sha256": "666eb8cb8dbd901af11f73f1b71769610bfe9630ea332fa739005a840d993dff"
+    },
+    {
+      "slug": "toxtricity",
+      "name": "Toxtricity",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/toxtricity",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/849.png",
+      "sha256": "694761454c935e824e31bedfe9c40c9afea666fb22bf3e68ee701b9d220f72f2"
+    },
+    {
+      "slug": "trevenant",
+      "name": "Trevenant",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/trevenant",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/709.png",
+      "sha256": "d3c2ba9f00fd0c3fe897f933c1bb93348b34134ffab508ec23b3245c12a6c9d5"
+    },
+    {
+      "slug": "typhlosion",
+      "name": "Typhlosion",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/typhlosion",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/157.png",
+      "sha256": "7be01ad9ddd3cce31c242347af8d9d3bb683cab44ae5fc153a02421348257918"
+    },
+    {
+      "slug": "ursaluna",
+      "name": "Ursaluna",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/ursaluna",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/901.png",
+      "sha256": "f38bf4f261869d6be30a8aa18d489efdd58d70c8b7dbd980317a23a78c7e1adb"
+    },
+    {
+      "slug": "venusaur",
+      "name": "Venusaur",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/venusaur",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/3.png",
+      "sha256": "f3ed13e1666f67ccf6aef1453d4a3fb0ceb6b6c5769c56f9e46ec4ac021542af"
+    },
+    {
+      "slug": "wailord",
+      "name": "Wailord",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/wailord",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/321.png",
+      "sha256": "6032aae8da4e82c02f48eb6f7dde23f8bd3f17ec090baa1a0e01e31ab7db5a6e"
+    },
+    {
+      "slug": "yanmega",
+      "name": "Yanmega",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/yanmega",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/469.png",
+      "sha256": "7281fc7624bcf53b2880b6a20afd4817291d2ed67be3f20c3d505cadd158f0b0"
+    },
+    {
+      "slug": "zacian",
+      "name": "Zacian",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/zacian",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/888.png",
+      "sha256": "135b14b02f3308ac621448eb3eddcaa2d0cc4d254455ef55132ecaf4911f2e06"
+    },
+    {
+      "slug": "zoroark",
+      "name": "Zoroark",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/zoroark",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/571.png",
+      "sha256": "87bd86cfb37036ba1df374be526049c05c58bb68461c8e3c0369216047384017"
+    },
+    {
+      "slug": "zygarde",
+      "name": "Zygarde",
+      "pokemonDbUrl": "https://pokemondb.net/sprites/zygarde",
+      "pokeApiUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/0dc105d5b12416932f29b594078282ab4be045f5/sprites/pokemon/718.png",
+      "sha256": "2b6e0692b3ce3fb16b2fa531848d98062bca634ebbaab3c9e16fd67f650d5a6a"
+    }
+  ]
+}
