@@ -14,10 +14,10 @@
 }
 .brand-logo{
   display:block;
-  width:min(100%,170px);
+  width:min(100%,190px);
   height:auto;
-  border-radius:11px;
-  box-shadow:0 9px 22px #0009;
+  object-fit:contain;
+  filter:drop-shadow(0 9px 14px #0009);
 }
 .brand-season{
   color:#f0cc71;
@@ -29,12 +29,9 @@
 .mobile-brand{align-items:center;gap:9px}
 .mobile-brand img{
   display:block;
-  width:39px;
-  height:39px;
-  object-fit:cover;
-  object-position:center 30%;
-  border:1px solid #ae892c;
-  border-radius:9px;
+  width:52px;
+  height:52px;
+  object-fit:contain;
 }
 .mobile-brand span{color:#f0cc71}
 .mobile-brand small{display:block;color:#91a2b8;font-size:9px;letter-spacing:1px;margin-top:2px}
@@ -45,23 +42,90 @@
 @media(max-width:430px){.top-note{display:none}}
 .mobile-mascot{
   display:block;
-  position:relative;
   flex:none;
-  width:39px;
-  height:39px;
-  overflow:hidden;
-  border:1px solid #ae892c;
-  border-radius:9px;
-  background:#123019;
+  width:52px;
+  height:52px;
 }
 .mobile-brand .mobile-mascot img{
-  position:absolute;
-  left:-21px;
-  top:-24px;
-  width:80px;
-  height:auto;
-  max-width:none;
-  border:0;
-  border-radius:0;
-  object-fit:initial;
+  width:100%;
+  height:100%;
+  object-fit:contain;
 }
+
+/* Paleta BARATÃO TCG: preto, dourado e neutros quentes. */
+:root{
+  --black:#090806;
+  --surface:#15120d;
+  --surface-raised:#1c170f;
+  --border:#44361e;
+  --gold:#f4bf35;
+  --gold-light:#ffdc78;
+  --text:#f5f0e4;
+  --muted:#b5a98f;
+  color:var(--text);
+  background:var(--black);
+}
+body{background:radial-gradient(circle at 75% 0%,#211805 0%,var(--black) 42%)}
+a{color:var(--gold-light)}
+a:hover{color:#fff0bc}
+.sidebar{background:#0d0b08;border-right-color:var(--border)}
+.topbar{background:#0d0b08;border-bottom-color:var(--border);color:var(--muted)}
+.brand{
+  border-color:#7b5919;
+  background:radial-gradient(circle at 50% 35%,#382707 0%,#1b1408 60%,#100d08 100%);
+  box-shadow:inset 0 0 0 1px #3e2d0d,0 12px 32px #0009;
+}
+.brand-season,.eyebrow,.accent,.highlight-num{color:var(--gold)}
+.mint{color:#e4a928}
+.nav-title,.brand small,.metric .tag,.metric small,.panel p.sub,.head p,
+.tiny,.event-card p,.intro,.footnote,.help-list,.inputbox label,
+.modal p,.empty,.side-bottom,.side-bottom small{color:var(--muted)}
+.nav-link{color:#c9bda5}
+.nav-link:hover{background:#241b0c;color:var(--text)}
+.nav-link.active{
+  background:linear-gradient(90deg,#35260d,#231b10);
+  color:var(--gold-light);
+  box-shadow:inset 3px 0 var(--gold);
+}
+.side-bottom,footer{border-color:var(--border)}
+.side-bottom small,footer,footer span{color:#a69779}
+.edition{border-color:#8c661b;color:var(--gold-light);background:#261b09}
+.btn{border-color:#65502b;background:#241c11;color:var(--text)}
+.btn:hover{background:#392a14;border-color:#9a7226}
+.btn.primary{background:linear-gradient(180deg,#ffd55d,#e6a91d);border-color:#e6ad25;color:#1b1204}
+.btn.primary:hover{background:linear-gradient(180deg,#ffe18a,#f2bf3a)}
+.btn.danger{border-color:#84504a;color:#ffb4ad}
+.metric,.panel{background:var(--surface);border-color:var(--border)}
+.metric{box-shadow:inset 0 1px #fff1}
+th{color:#c8b690;border-bottom-color:#6a5126}
+td{color:#e4dac5;border-bottom-color:#352b1b}
+tbody tr:hover{background:#251c0d}
+.deck-name,.empty strong{color:var(--text)}
+.rank{background:#302516;color:#d8bc7c}
+.rank.gold{background:#614712;color:var(--gold-light)}
+.bartrack{background:#342715}
+.barfill{background:var(--gold)}
+.barfill.mint{background:#d49a1f}
+.pill{color:#f1d68c;background:#32250f;border-color:#72531d}
+.pill.warn{color:#f7d482;background:#403116;border-color:#89672b}
+.pill.good{color:#a9e3ba;background:#1a3223;border-color:#376344}
+.pill.muted{color:#c3b7a0;background:#2b251b;border-color:#51432c}
+.note{border-left-color:var(--gold);background:#2b210e;color:#ead6a8}
+.field,select{background:#100e0a;border-color:#64502e;color:var(--text)}
+.field:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 2px #f4bf3530}
+.field::placeholder{color:#8d7d5d}
+.event-card{background:var(--surface-raised);border-color:#594523}
+.event-card .date,.mono{color:#e0bc68}
+.empty{border-color:#65502b}
+.matrix th:first-child,.matrix td:first-child{background:#1c170f}
+.heat-good{background:#1c3827;color:#bbebc5}
+.heat-bad{background:#472521;color:#ffd0c0}
+.heat-even{background:#37301f;color:#f2e3c5}
+.heat-none{color:#8c7b5f}
+.modal-overlay{background:#050402e6}
+.modal{background:#1b160e;border-color:#806331}
+.toast{background:#3b2c11;color:#fff2c9;border-color:#bd8d2c}
+.mobile-brand{color:var(--gold-light)}
+.mobile-brand span{color:var(--gold-light)}
+.mobile-brand small{color:var(--muted)}
+@media(max-width:720px){.topbar{height:66px}}
