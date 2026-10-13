@@ -27,14 +27,14 @@ Na [página de N’s Zoroark](https://labs.limitlesstcg.com/0075/decks/n-zoroark
 
 | Teste | Estado | Evidência / limite |
 |---|---|---|
-| A — Recife | VALIDADO | Recoleta ao vivo: 1.074 jogadores, 63 variantes, 635 pares, 9 listas Top Cut, sem falhas; prévia no navegador conferida. |
-| B — Reimportação | TESTADO | Duas análises/confirmacões seguidas no navegador: 1 torneio, 63 resultados e 635 pares em ambas. |
+| A — Recife | VALIDADO | Recoleta ao vivo: 1.074 jogadores, 63 variantes, 635 pares, 9 listas Top Cut, sem falhas. |
+| B — Reimportação | TESTADO | Duas coletas seguidas e mesclagem repetida: 1 torneio, 63 resultados e 635 pares em ambas. |
 | C — Matchup | VALIDADO | N’s Zoroark × Dragapult e variantes conferidos na página de confronto e na perspectiva inversa. |
-| D — Persistência | TESTADO | Depois de confirmar Recife e recarregar a página: 63 resultados e 635 pares preservados no `localStorage`. |
+| D — Persistência | TESTADO | A fonte aplicada ao navegador manteve 63 resultados e 635 pares de Recife após recarregar a página. |
 | E — Ranking | TESTADO | Base local preliminar produz zero candidatos observados; aplicar a fonte verificada alimenta o Top 15. Percentuais ausentes não são convertidos em W/L/D. |
 | F — Backup | TESTADO | Exportação e restauração em contexto limpo do navegador preservaram 384 resultados, 4.614 pares e um treino criado no teste. |
 
-`IMPLEMENTADO` significa código disponível, sem implicar validação; `TESTADO` significa comportamento reproduzido em teste local; `VALIDADO` significa conferido com dados públicos do Labs; `PARCIAL` significa cobertura ou funcionalidade incompleta; `BLOQUEADO` significa impedimento externo; `NÃO IMPLEMENTADO` significa ausência de código. A extração de classificação, Win % publicado, variantes, Dia 2, Top Cut, matchups agregados e listas Top Cut é **VALIDADO**. A importação por URL com prévia, confirmação, reimportação e backup é **TESTADO** no servidor local. Rodadas individuais, placares dos jogos da série, todas as decklists e sincronização dos relatórios detalhados no banco do navegador são **NÃO IMPLEMENTADO**. A importação por URL no GitHub Pages ou ao abrir `index.html` diretamente é **BLOQUEADO** pela política de acesso entre origens do navegador; use `npm run serve:local`.
+`IMPLEMENTADO` significa código disponível, sem implicar validação; `TESTADO` significa comportamento reproduzido em teste local; `VALIDADO` significa conferido com dados públicos do Labs; `PARCIAL` significa cobertura ou funcionalidade incompleta; `BLOQUEADO` significa impedimento externo; `NÃO IMPLEMENTADO` significa ausência de código. A extração de classificação, Win % publicado, variantes, Dia 2, Top Cut, matchups agregados e listas Top Cut é **VALIDADO**. A coleta a partir dos links enviados pelo usuário é feita pelo responsável pela atualização com o importador Node.js; reimportação, persistência e backup são **TESTADO**. Rodadas individuais, placares dos jogos da série, todas as decklists e sincronização dos relatórios detalhados no banco do navegador são **NÃO IMPLEMENTADO**. A análise direta por URL no navegador foi retirada para manter o fluxo simples; o site não depende de um servidor de importação.
 
 ## Riscos e próximos passos
 
