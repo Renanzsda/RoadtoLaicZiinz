@@ -4,6 +4,7 @@ const SEED = {
   version: 1,
   tournaments: [
     {id:'0072',name:'Baltimore Regional',region:'Ocidente',country:'EUA',date:'2026-09-18',format:'BO3',players:3122,url:'https://labs.limitlesstcg.com/0072/standings',status:'preliminar'},
+    {id:'0073',name:'Brisbane Regional',region:'Ocidente',country:'Austrália',date:'2026-09-26',format:'BO3',players:817,url:'https://labs.limitlesstcg.com/0073/standings',status:'incompleto'},
     {id:'0074',name:'Frankfurt Regional',region:'Ocidente',country:'Alemanha',date:'2026-09-26',format:'BO3',players:2793,url:'https://labs.limitlesstcg.com/0074/standings',status:'preliminar'},
     {id:'0075',name:'Recife Regional',region:'Ocidente',country:'Brasil',date:'2026-10-03',format:'BO3',players:1074,url:'https://labs.limitlesstcg.com/0075/standings',status:'preliminar'},
     {id:'0076',name:'Louisville Regional',region:'Ocidente',country:'EUA',date:'2026-10-09',format:'BO3',players:2927,url:'https://labs.limitlesstcg.com/0076/standings',status:'preliminar'},

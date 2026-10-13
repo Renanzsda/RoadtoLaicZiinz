@@ -2,6 +2,8 @@
 
 > Projeto de análise de metagame e treinamento coletivo de Pokémon TCG, com foco na preparação do grupo BARATÃO TCG para o LAIC de novembro de 2026.
 
+**Recorte ativo da V2:** somente MD3 dos Regionais 0072, 0073, 0074, 0075 e 0076. Yokohama e City Leagues permanecem documentados e seus registros existentes são preservados, mas não entram no ranking deste recorte. O 0073 é o Regional de Brisbane; os dados dos cinco eventos foram coletados das páginas públicas do Limitless Labs e mantêm URLs de proveniência por linha.
+
 ## 1. Objetivo e escopo
 
 Construir uma aplicação **simples, local e auditável**, em **HTML, CSS e JavaScript puro**, que ajude um grupo de jogadores a escolher **15 decks prioritários de treinamento**, identificar melhores/piores matchups, acompanhar mudanças no metagame e registrar treinos.
@@ -15,11 +17,12 @@ O Top 15 do grupo é **revisável**. Não apresentar projeções como fatos ou t
 
 ## 2. Fontes de dados
 
-### Regionais ocidentais (base principal, quatro eventos)
+### Regionais ocidentais (base principal, cinco eventos)
 
 | ID | Evento | Fonte de classificação | Fonte de decks / matchups |
 |---|---|---|---|
 | 0072 | Baltimore | https://labs.limitlesstcg.com/0072/standings | https://labs.limitlesstcg.com/0072/decks |
+| 0073 | Brisbane | https://labs.limitlesstcg.com/0073/standings | https://labs.limitlesstcg.com/0073/decks |
 | 0074 | Frankfurt | https://labs.limitlesstcg.com/0074/standings | https://labs.limitlesstcg.com/0074/decks |
 | 0075 | Recife | https://labs.limitlesstcg.com/0075/standings | https://labs.limitlesstcg.com/0075/decks |
 | 0076 | Louisville | https://labs.limitlesstcg.com/0076/standings | https://labs.limitlesstcg.com/0076/decks |
@@ -151,7 +154,7 @@ Observação: a V1 usa `SEED` em `seed.js` e chave de armazenamento em `app.js`.
 
 ### Fase 1 — Consolidar e validar dados
 
-- [ ] Validar IDs, nome, datas, formato, participantes e números dos quatro Regionais nas fontes.
+- [ ] Validar IDs, nome, datas, formato, participantes e números dos cinco Regionais nas fontes.
 - [ ] Criar controle de proveniência por linha: URL, data de coleta, verificado/incompleto.
 - [ ] Extrair resultados por arquétipo **sem estimar W/L/D a partir de win rate arredondado**.
 - [ ] Coletar matchups de cada Regional com totais de W/L/D e identificação de variantes.
@@ -195,7 +198,7 @@ Observação: a V1 usa `SEED` em `seed.js` e chave de armazenamento em `app.js`.
 
 ## 8. Definição de pronto para a próxima entrega
 
-Uma V2 inicial estará pronta quando **os quatro Regionais estiverem auditados**, a matriz de matchups mostrar **apenas confrontos reais com amostra**, houver **rankings separados** para desempenho e treino, e o usuário puder **exportar/restaurar** todos os dados sem perda.
+Uma V2 inicial estará pronta quando **os cinco Regionais estiverem auditados**, a matriz de matchups mostrar **apenas confrontos reais com amostra**, houver **rankings separados** para desempenho e treino, e o usuário puder **exportar/restaurar** todos os dados sem perda.
 
 ## 9. Prompt sugerido para iniciar o Codex
 
@@ -204,3 +207,19 @@ Uma V2 inicial estará pronta quando **os quatro Regionais estiverem auditados**
 ---
 
 **Princípio do projeto:** a ferramenta deve ajudar o grupo BARATÃO TCG a treinar melhor para o LAIC, mostrando tanto aquilo que os dados confirmam quanto aquilo que ainda não sabemos.
+
+## 10. Preparação da V2 e importação auditada
+
+A aplicação continua estática e funciona localmente. `data-core.js` valida backups e arquivos de fonte; `app.js` mantém a interface e o armazenamento. Backups V1 são migrados para a versão 2 no navegador. A chave antiga `baratao-road-to-laic-v1` permanece intacta; a V2 usa `baratao-road-to-laic-v2`. Exporte um backup antes de importar dados ou restaurar a base. A importação de backup substitui a base local; a importação de fonte incorpora torneios, resultados e matchups, mantendo os treinos.
+
+O arquivo de fonte é JSON com `schemaVersion: 2` e três listas: `tournaments`, `results`, `matchups`. Pode-se importar um torneio sem resultados ou matchups; listas vazias representam ausência de dados coletados, não zero ocorrências. Cada torneio exige `id`, `name`, `region`, `format` (`BO1` ou `BO3`), `date` (`AAAA-MM-DD`), `players` (inteiro ou `null`), `sourceUrl` HTTPS e `status` (`preliminar`, `verificado` ou `incompleto`). Cada resultado exige `tournamentId`, `deck`, `players`, `day2`, `wins`, `losses`, `draws` (contagens inteiras ou `null`), `winRateReported` (número ou `null`), `unit` (`game` ou `match`), `sourceUrl`, `retrievedAt` em formato ISO e `status`. Se houver `winRateReported`, informe `metricDefinition` com a definição publicada pela fonte. Preencha as três contagens W/L/D juntas ou deixe as três como `null`; nunca derive contagens de percentuais arredondados.
+
+Cada matchup exige `tournamentId`, `deck`, `opponent`, `wins`, `losses`, `draws` (inteiros não negativos, com ao menos uma partida), `unit`, `sourceUrl`, `retrievedAt` e `status`. Importe um confronto apenas em uma perspectiva: as perspectivas inversas do mesmo par, torneio e unidade são rejeitadas. Preserve a variante do arquétipo como aparece na fonte. Os filtros da interface separam MD1/MD3; confrontos em jogos, séries e registros antigos sem unidade identificada também ficam separados.
+
+A aplicação **não extrai dados automaticamente do Limitless durante o uso**. O arquivo `regionals-data.js` reúne 384 linhas de resultados e 522 confrontos dos cinco Regionais. As linhas vieram das páginas `decks`, `decks?conversion` e `decks/<arquétipo>/matchups`; cada par de confronto foi conferido também na perspectiva inversa. Três pares por evento não tinham confrontos publicados entre os 15 arquétipos candidatos e foram deixados ausentes. A cobertura de arquétipos nas páginas `decks` foi de 3119/3122 (0072), 816/817 (0073), 2793/2793 (0074), 1072/1074 (0075) e 2918/2927 (0076) participantes. Esses limites não são preenchidos por estimativa.
+
+O `Win %` publicado corresponde, em todas as linhas coletadas, a `100 × (W + T/3) / (W + L + T)`, com arredondamento a duas casas. É a taxa por pontos de séries MD3 (3/1/0). A taxa com empate valendo metade e a taxa de vitórias puras são métricas distintas. A página de ranking separa desempenho observado (mínimo de 100 séries para ordenar) e prioridade inicial de treino (presença observada); a prioridade final depende dos decks que os integrantes jogarão e dos confrontos específicos. O índice experimental da V1 permanece visível para comparação, sem ser tratado como previsão.
+
+Em um navegador sem dados locais, a V2 carrega o conjunto auditado. Backups antigos são preservados na chave V1 e não recebem atualização automática por cima de dados pessoais; use **Aplicar 5 Regionais auditados** na aba Dados & backups para incorporá-los à base local depois de exportar um backup. A importação de fonte aceita apenas os cinco Regionais MD3. Yokohama e City Leagues continuam fora do ranking atual.
+
+Validação local: `node --test tests/*.test.js` e `node --check app.js`. Para abrir a interface, use `index.html` diretamente ou um servidor estático como `python3 -m http.server 8000` no diretório do projeto.
